@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @license https://github.com/graze/dynamark3-client/blob/master/LICENSE
+ * @license https://github.com/graze/dynamark3-client/blob/master/LICENSE.md
  * @link https://github.com/graze/dynamark3-client
  */
 
