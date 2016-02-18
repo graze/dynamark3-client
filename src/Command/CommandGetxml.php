@@ -41,7 +41,8 @@ class CommandGetxml extends AbstractCommand
      */
     public function parseResponse(TelnetResponseInterface $telnetResponse)
     {
-        $prompt = reset($telnetResponse->getPromptMatches());
+        $promptMatches = $telnetResponse->getPromptMatches();
+        $prompt = reset($promptMatches);
 
         $response = parent::parseResponse($telnetResponse);
         // prompt = RESULT GETXML <xml><something...
