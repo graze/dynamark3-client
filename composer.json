@@ -1,0 +1,33 @@
+{
+    "name": "graze/dynamark3-client",
+    "description": "A Dynamark Communication Protocol 3 client, written in PHP",
+    "repositories": [
+        { "type": "vcs", "url": "git@github.com:graze/telnet-client.git" }
+    ],
+    "require": {
+        "graze/telnet-client": "dev-initialCommit"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^3.0",
+        "mockery/mockery": "^0.9.4",
+        "phpunit/phpunit": "^4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Graze\\Dynamark3Client\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Graze\\Dynamark3Client\\Test\\": "tests/src",
+            "Graze\\Dynamark3Client\\Test\\Unit\\": "tests/unit",
+            "Graze\\Dynamark3Client\\Test\\Functional\\": "tests/functional"
+        }
+    },
+    "authors": [
+        {
+            "name": "John Smith",
+            "email": "john@graze.com"
+        }
+    ]
+}
