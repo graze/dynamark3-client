@@ -30,7 +30,7 @@ class CommandGenericTest extends AbstractCommandTestCase
      */
     protected function getCommand()
     {
-        return new CommandGeneric($this->commandText);
+        return new CommandGeneric('MARK STOP');
     }
 
     /**
@@ -47,31 +47,5 @@ class CommandGenericTest extends AbstractCommandTestCase
     protected function getExpectedResponseText()
     {
         return Dynamark3Constants::PROMPT;
-    }
-
-    /**
-     * @dataProvider dataProviderCommandSuccess
-     *
-     * @param string $commandText
-     * @param string $rawTelnetResponse
-     * @param string $expectedResponseText
-     *
-     * @return void
-     */
-    public function testCommandSuccess($commandText)
-    {
-        $this->commandText = $commandText;
-        parent::testCommandSuccess();
-    }
-
-    /**
-     * @return []
-     */
-    public function dataProviderCommandSuccess()
-    {
-        return [
-            ['MARK STOP'],
-            ['ANOTHERCOMMAND']
-        ];
     }
 }
