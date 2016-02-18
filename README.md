@@ -86,6 +86,21 @@ public function isError();
 public function getErrorCode();
 ```
 
+Handling a response:
+
+```php
+...
+$resp = $client->getxml();
+if ($resp->isError()) {
+    echo sprintf('the server responded with error code: [%d]', $resp->getErrorCode());
+    // look up the error code in the Dynamark 3 protocol docs
+    return;
+}
+
+$xml = $resp->getResponseText();
+// do something fun with the xml
+```
+
 Example success response:
 
 <img width="510" alt="screen shot 2016-02-17 at 16 38 35" src="https://cloud.githubusercontent.com/assets/1314694/13116875/8d932774-d595-11e5-8f48-51198eb9e8ba.png">
