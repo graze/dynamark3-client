@@ -44,7 +44,8 @@ abstract class AbstractCommand implements CommandInterface
     public function parseResponse(TelnetResponseInterface $response)
     {
         $errorCode = null;
-        $prompt = reset($response->getPromptMatches());
+        $promptMatches = $response->getPromptMatches();
+        $prompt = reset($promptMatches);
         if ($response->isError()) {
             // error prompt - ERROR nnn
             $errorCode = substr($prompt, 6);
