@@ -25,7 +25,7 @@ abstract class AbstractCommandTestCase extends \PHPUnit_Framework_TestCase
     /**
      * Returns the Command to be tested
      *
-     * @return Graze\Dynamark3Client\Command\CommandInterface
+     * @return \Graze\Dynamark3Client\Command\CommandInterface
      */
     abstract protected function getCommand();
 
