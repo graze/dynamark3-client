@@ -14,7 +14,9 @@
 
 namespace Graze\Dynamark3Client;
 
-class Dynamark3Response
+use Graze\Dynamark3Client\Dynamark3ResponseInterface;
+
+class Dynamark3Response implements Dynamark3ResponseInterface
 {
     /**
      * @var string
