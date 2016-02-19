@@ -64,7 +64,7 @@ class Dynamark3ClientTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return []
+     * @return array
      */
     public function dataProviderSend()
     {
