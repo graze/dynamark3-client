@@ -37,7 +37,7 @@ class Dynamark3ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return []
+     * @return array
      */
     public function dataProviderSettersAndGetters()
     {
