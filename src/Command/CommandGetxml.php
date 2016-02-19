@@ -37,7 +37,7 @@ class CommandGetxml extends AbstractCommand
     /**
      * @param TelnetResponseInterface $telnetResponse
      *
-     * @return Graze\Dynamark3Client\Dynamark3ResponseInterface
+     * @return \Graze\Dynamark3Client\Dynamark3ResponseInterface
      */
     public function parseResponse(TelnetResponseInterface $telnetResponse)
     {

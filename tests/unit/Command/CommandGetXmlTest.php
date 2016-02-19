@@ -21,7 +21,7 @@ use Graze\Dynamark3Client\Dynamark3Constants;
 class CommandGetxmlTest extends AbstractCommandTestCase
 {
     /**
-     * @return Graze\Dynamark3Client\Command\CommandInterface
+     * @return \Graze\Dynamark3Client\Command\CommandInterface
      */
     protected function getCommand()
     {

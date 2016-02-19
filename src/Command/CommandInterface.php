@@ -31,7 +31,7 @@ interface CommandInterface
     /**
      * @param TelnetResponseInterface $response
      *
-     * @return Graze\Dynamark3Client\Dynamark3ResponseInterface
+     * @return \Graze\Dynamark3Client\Dynamark3ResponseInterface
      */
     public function parseResponse(TelnetResponseInterface $response);
 }
