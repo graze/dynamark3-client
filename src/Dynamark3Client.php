@@ -14,11 +14,11 @@
 
 namespace Graze\Dynamark3Client;
 
-use Graze\TelnetClient\TelnetClientInterface;
-use Graze\Dynamark3Client\CommandResolver;
-use Graze\Dynamark3Client\Command\CommandInterface;
-use Graze\TelnetClient\TelnetClient;
-use Graze\Dynamark3Client\Dynamark3Constants;
+use \Graze\TelnetClient\TelnetClientInterface;
+use \Graze\Dynamark3Client\CommandResolver;
+use \Graze\Dynamark3Client\Command\CommandInterface;
+use \Graze\TelnetClient\TelnetClient;
+use \Graze\Dynamark3Client\Dynamark3Constants;
 
 class Dynamark3Client
 {

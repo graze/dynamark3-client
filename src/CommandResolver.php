@@ -14,7 +14,7 @@
 
 namespace Graze\Dynamark3Client;
 
-use Graze\Dynamark3Client\Command\CommandGeneric;
+use \Graze\Dynamark3Client\Command\CommandGeneric;
 
 class CommandResolver
 {

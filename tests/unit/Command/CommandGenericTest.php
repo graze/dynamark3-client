@@ -14,9 +14,9 @@
 
 namespace Graze\Dynamark3Client\Test\Unit\Command;
 
-use Graze\Dynamark3Client\Test\AbstractCommandTestCase;
-use Graze\Dynamark3Client\Dynamark3Constants;
-use Graze\Dynamark3Client\Command\CommandGeneric;
+use \Graze\Dynamark3Client\Test\AbstractCommandTestCase;
+use \Graze\Dynamark3Client\Dynamark3Constants;
+use \Graze\Dynamark3Client\Command\CommandGeneric;
 
 class CommandGenericTest extends AbstractCommandTestCase
 {

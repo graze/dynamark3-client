@@ -14,13 +14,13 @@
 
 namespace Graze\Dynamark3Client\Test\Unit;
 
-use Graze\TelnetClient\TelnetResponseInterface;
-use Graze\Dynamark3Client\Command\CommandInterface;
-use Graze\TelnetClient\TelnetClientInterface;
-use Graze\Dynamark3Client\CommandResolver;
-use Graze\Dynamark3Client\Dynamark3Client;
-use Graze\Dynamark3Client\Dynamark3Constants;
-use Mockery as m;
+use \Graze\TelnetClient\TelnetResponseInterface;
+use \Graze\Dynamark3Client\Command\CommandInterface;
+use \Graze\TelnetClient\TelnetClientInterface;
+use \Graze\Dynamark3Client\CommandResolver;
+use \Graze\Dynamark3Client\Dynamark3Client;
+use \Graze\Dynamark3Client\Dynamark3Constants;
+use \Mockery as m;
 
 class Dynamark3ClientTest extends \PHPUnit_Framework_TestCase
 {

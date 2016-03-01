@@ -14,11 +14,11 @@
 
 namespace Graze\Dynamark3Client\Test;
 
-use Graze\TelnetClient\PromptMatcher;
-use Graze\TelnetClient\TelnetResponseInterface;
-use Graze\Dynamark3Client\Dynamark3Constants;
-use Graze\Dynamark3Client\Command\CommandInterface;
-use Mockery as m;
+use \Graze\TelnetClient\PromptMatcher;
+use \Graze\TelnetClient\TelnetResponseInterface;
+use \Graze\Dynamark3Client\Dynamark3Constants;
+use \Graze\Dynamark3Client\Command\CommandInterface;
+use \Mockery as m;
 
 abstract class AbstractCommandTestCase extends \PHPUnit_Framework_TestCase
 {

@@ -14,10 +14,10 @@
 
 namespace Graze\Dynamark3Client\Command;
 
-use Graze\Dynamark3Client\Command\CommandInterface;
-use Graze\TelnetClient\TelnetResponseInterface;
-use Graze\Dynamark3Client\Dynamark3Response;
-use Graze\Dynamark3Client\Dynamark3Constants;
+use \Graze\Dynamark3Client\Command\CommandInterface;
+use \Graze\TelnetClient\TelnetResponseInterface;
+use \Graze\Dynamark3Client\Dynamark3Response;
+use \Graze\Dynamark3Client\Dynamark3Constants;
 
 abstract class AbstractCommand implements CommandInterface
 {
