@@ -19,6 +19,7 @@ use Graze\Dynamark3Client\Command\CommandInterface;
 use Graze\TelnetClient\TelnetClientInterface;
 use Graze\Dynamark3Client\CommandResolver;
 use Graze\Dynamark3Client\Dynamark3Client;
+use Graze\Dynamark3Client\Dynamark3Constants;
 use Mockery as m;
 
 class Dynamark3ClientTest extends \PHPUnit_Framework_TestCase
@@ -72,5 +73,30 @@ class Dynamark3ClientTest extends \PHPUnit_Framework_TestCase
             ['aCommandYeah "arg1" "arg2"', 'aCommandYeah', ['arg1', 'arg2']],
             ['sweetCommandBro', 'sweetCommandBro', []],
         ];
+    }
+
+    public function testFactory()
+    {
+        $this->assertInstanceOf(Dynamark3Client::class, Dynamark3Client::factory());
+    }
+
+    public function testConnect()
+    {
+        $dsn = '127.0.0.1:23';
+        $telnet = m::mock(TelnetClientInterface::class)
+            ->shouldReceive('connect')
+            ->with(
+                $dsn,
+                Dynamark3Constants::PROMPT,
+                Dynamark3Constants::PROMPT_ERROR,
+                Dynamark3Constants::LINE_ENDING
+            )
+            ->once()
+            ->getMock();
+
+        $commandResolver = m::mock(CommandResolver::class);
+
+        $client = new Dynamark3Client($telnet, $commandResolver);
+        $client->connect($dsn);
     }
 }

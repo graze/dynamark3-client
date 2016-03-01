@@ -43,6 +43,19 @@ class Dynamark3Client
     }
 
     /**
+     * @param string $dsn
+     */
+    public function connect($dsn)
+    {
+        $this->telnet->connect(
+            $dsn,
+            Dynamark3Constants::PROMPT,
+            Dynamark3Constants::PROMPT_ERROR,
+            Dynamark3Constants::LINE_ENDING
+        );
+    }
+
+    /**
      * @param string $name
      * @param array $arguments
      *
@@ -84,21 +97,12 @@ class Dynamark3Client
     }
 
     /**
-     * @param string $dsn
-     *
      * @return Dynamark3Client
      */
-    public static function build($dsn)
+    public static function factory()
     {
-        $telnetClient = TelnetClient::build(
-            $dsn,
-            Dynamark3Constants::PROMPT,
-            Dynamark3Constants::PROMPT_ERROR,
-            Dynamark3Constants::LINE_ENDING
-        );
-
         return new static(
-            $telnetClient,
+            TelnetClient::factory(),
             new CommandResolver()
         );
     }
