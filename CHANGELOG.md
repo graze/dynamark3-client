@@ -2,6 +2,27 @@
 
 All Notable changes to `dynamark3-client` will be documented in this file
 
+## v2.0.0 - 2016-03-01
+
+### Added
+- Connect method. The client is no longer returned with an active connection upon instantiation
+
+### Changed
+- The static `Dynamark3Client::build` command is now `Dynamark3Client::factory`
+
+### Fixed
+- Nothing
+
+### Deprecated
+- Nothing
+
+### Removed
+- `Dynamark3Client::build`
+
+### Security
+- Nothing
+
+
 ## v1.0.0 - 2016-02-17
 
 ### Added
