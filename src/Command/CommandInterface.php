@@ -24,6 +24,13 @@ interface CommandInterface
     public function getCommandText();
 
     /**
+     * @param array $arguments
+     *
+     * @return string
+     */
+    public function getArgumentText(array $arguments);
+
+    /**
      * @return string
      */
     public function getPrompt();
