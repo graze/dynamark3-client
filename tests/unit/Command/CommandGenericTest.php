@@ -48,4 +48,12 @@ class CommandGenericTest extends AbstractCommandTestCase
     {
         return Dynamark3Constants::PROMPT;
     }
+
+    /**
+     * @return string
+     */
+    protected function getExpectedArgumentText()
+    {
+        return ' "a" "1"';
+    }
 }
