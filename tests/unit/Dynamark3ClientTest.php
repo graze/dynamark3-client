@@ -25,13 +25,6 @@ use \Mockery as m;
 
 class Dynamark3ClientTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @param string $expectedCommand
-     * @param string $commandText
-     * @param array $args
-     *
-     * @return void
-     */
     public function testSend()
     {
         $telnetResponse = m::mock(TelnetResponseInterface::class);
