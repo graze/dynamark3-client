@@ -14,7 +14,7 @@
 
 namespace Graze\Dynamark3Client\Test\Unit;
 
-use Graze\Dynamark3Client\Dynamark3Response;
+use \Graze\Dynamark3Client\Dynamark3Response;
 
 class Dynamark3ResponseTest extends \PHPUnit_Framework_TestCase
 {

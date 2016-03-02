@@ -14,10 +14,10 @@
 
 namespace Graze\Dynamark3Client\Command;
 
-use Graze\Dynamark3Client\Command\CommandInterface;
-use Graze\TelnetClient\TelnetResponseInterface;
-use Graze\Dynamark3Client\Dynamark3Response;
-use Graze\Dynamark3Client\Dynamark3Constants;
+use \Graze\Dynamark3Client\Command\CommandInterface;
+use \Graze\TelnetClient\TelnetResponseInterface;
+use \Graze\Dynamark3Client\Dynamark3Response;
+use \Graze\Dynamark3Client\Dynamark3Constants;
 
 abstract class AbstractCommand implements CommandInterface
 {
@@ -25,6 +25,25 @@ abstract class AbstractCommand implements CommandInterface
      * @return string
      */
     abstract public function getCommandText();
+
+    /**
+     * @param array $arguments
+     *
+     * @return string
+     */
+    public function getArgumentText(array $arguments)
+    {
+        if (empty($arguments)) {
+            return '';
+        }
+
+        // add quotes to arguments
+        array_walk($arguments, function (&$value) {
+            $value = sprintf('"%s"', $value);
+        });
+
+        return ' ' . implode(' ', $arguments);
+    }
 
     /**
      * Default to the TelnetClient's prompt

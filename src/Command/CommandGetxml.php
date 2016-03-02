@@ -14,7 +14,7 @@
 
 namespace Graze\Dynamark3Client\Command;
 
-use Graze\TelnetClient\TelnetResponseInterface;
+use \Graze\TelnetClient\TelnetResponseInterface;
 
 class CommandGetxml extends AbstractCommand
 {

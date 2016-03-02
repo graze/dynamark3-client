@@ -14,9 +14,9 @@
 
 namespace Graze\Dynamark3Client\Test\Functional;
 
-use Graze\Dynamark3Client\CommandResolver;
-use Graze\Dynamark3Client\Command\CommandGeneric;
-use Graze\Dynamark3Client\Command\CommandGetxml;
+use \Graze\Dynamark3Client\CommandResolver;
+use \Graze\Dynamark3Client\Command\CommandGeneric;
+use \Graze\Dynamark3Client\Command\CommandGetxml;
 
 class Dynamark3ResolverTest extends \PHPUnit_Framework_TestCase
 {

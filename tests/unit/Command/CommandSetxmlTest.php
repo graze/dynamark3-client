@@ -15,22 +15,17 @@
 namespace Graze\Dynamark3Client\Test\Unit\Command;
 
 use \Graze\Dynamark3Client\Test\AbstractCommandTestCase;
+use \Graze\Dynamark3Client\Command\CommandSetxml;
 use \Graze\Dynamark3Client\Dynamark3Constants;
-use \Graze\Dynamark3Client\Command\CommandGeneric;
 
-class CommandGenericTest extends AbstractCommandTestCase
+class CommandSetxmlTest extends AbstractCommandTestCase
 {
     /**
-     * @var string
-     */
-    protected $commandText;
-
-    /**
-     * @return \Graze\Dynamark3Client\Command\CommandInterface
+     * @return CommandGetxml
      */
     protected function getCommand()
     {
-        return new CommandGeneric('MARK STOP');
+        return new CommandSetxml();
     }
 
     /**
@@ -54,6 +49,6 @@ class CommandGenericTest extends AbstractCommandTestCase
      */
     protected function getExpectedArgumentText()
     {
-        return ' "a" "1"';
+        return ' a 1';
     }
 }

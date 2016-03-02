@@ -14,9 +14,9 @@
 
 namespace Graze\Dynamark3Client\Test\Unit\Command;
 
-use Graze\Dynamark3Client\Test\AbstractCommandTestCase;
-use Graze\Dynamark3Client\Command\CommandGetxml;
-use Graze\Dynamark3Client\Dynamark3Constants;
+use \Graze\Dynamark3Client\Test\AbstractCommandTestCase;
+use \Graze\Dynamark3Client\Command\CommandGetxml;
+use \Graze\Dynamark3Client\Dynamark3Constants;
 
 class CommandGetxmlTest extends AbstractCommandTestCase
 {
@@ -42,5 +42,13 @@ class CommandGetxmlTest extends AbstractCommandTestCase
     protected function getExpectedResponseText()
     {
         return '<xml><node>cool xml</node></xml>';
+    }
+
+    /**
+     * @return string
+     */
+    protected function getExpectedArgumentText()
+    {
+        return ' "a" "1"';
     }
 }

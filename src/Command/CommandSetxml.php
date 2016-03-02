@@ -16,29 +16,27 @@ namespace Graze\Dynamark3Client\Command;
 
 use \Graze\TelnetClient\TelnetResponseInterface;
 
-interface CommandInterface
+class CommandSetxml extends AbstractCommand
 {
     /**
      * @return string
      */
-    public function getCommandText();
+    public function getCommandText()
+    {
+        return 'SETXML';
+    }
 
     /**
      * @param array $arguments
      *
      * @return string
      */
-    public function getArgumentText(array $arguments);
+    public function getArgumentText(array $arguments)
+    {
+        if (empty($arguments)) {
+            return '';
+        }
 
-    /**
-     * @return string
-     */
-    public function getPrompt();
-
-    /**
-     * @param TelnetResponseInterface $response
-     *
-     * @return \Graze\Dynamark3Client\Dynamark3ResponseInterface
-     */
-    public function parseResponse(TelnetResponseInterface $response);
+        return ' ' . implode(' ', $arguments);
+    }
 }

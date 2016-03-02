@@ -14,11 +14,11 @@
 
 namespace Graze\Dynamark3Client\Test;
 
-use Graze\TelnetClient\PromptMatcher;
-use Graze\TelnetClient\TelnetResponseInterface;
-use Graze\Dynamark3Client\Dynamark3Constants;
-use Graze\Dynamark3Client\Command\CommandInterface;
-use Mockery as m;
+use \Graze\TelnetClient\PromptMatcher;
+use \Graze\TelnetClient\TelnetResponseInterface;
+use \Graze\Dynamark3Client\Dynamark3Constants;
+use \Graze\Dynamark3Client\Command\CommandInterface;
+use \Mockery as m;
 
 abstract class AbstractCommandTestCase extends \PHPUnit_Framework_TestCase
 {
@@ -44,9 +44,16 @@ abstract class AbstractCommandTestCase extends \PHPUnit_Framework_TestCase
     abstract protected function getExpectedResponseText();
 
     /**
+     * The expected result if $command->getArgumentText(['a', '1']) was called.
+     *
+     * @return string
+     */
+    abstract protected function getExpectedArgumentText();
+
+    /**
      * @return void
      */
-    public function testCommandSuccess()
+    public function testParseResponseSuccess()
     {
         $command = $this->getCommand();
 
@@ -66,7 +73,7 @@ abstract class AbstractCommandTestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return void
      */
-    public function testCommandError()
+    public function testParseResponseError()
     {
         $command = $this->getCommand();
 
@@ -79,6 +86,12 @@ abstract class AbstractCommandTestCase extends \PHPUnit_Framework_TestCase
         $response = $command->parseResponse($telnetResponse);
         $this->assertTrue($response->isError());
         $this->assertEquals(6, $response->getErrorCode());
+    }
+
+    public function testGetArgumentText()
+    {
+        $command = $this->getCommand();
+        $this->assertEquals($this->getExpectedArgumentText(), $command->getArgumentText(['a', '1']));
     }
 
     /**

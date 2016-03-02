@@ -25,6 +25,6 @@
         }
     ],
     "require": {
-        "graze/telnet-client": "^1.0"
+        "graze/telnet-client": "^2.0"
     }
 }

@@ -14,11 +14,11 @@
 
 namespace Graze\Dynamark3Client;
 
-use Graze\TelnetClient\TelnetClientInterface;
-use Graze\Dynamark3Client\CommandResolver;
-use Graze\Dynamark3Client\Command\CommandInterface;
-use Graze\TelnetClient\TelnetClient;
-use Graze\Dynamark3Client\Dynamark3Constants;
+use \Graze\TelnetClient\TelnetClientInterface;
+use \Graze\Dynamark3Client\CommandResolver;
+use \Graze\Dynamark3Client\Command\CommandInterface;
+use \Graze\TelnetClient\TelnetClient;
+use \Graze\Dynamark3Client\Dynamark3Constants;
 
 class Dynamark3Client
 {
@@ -43,40 +43,29 @@ class Dynamark3Client
     }
 
     /**
+     * @param string $dsn
+     */
+    public function connect($dsn)
+    {
+        $this->telnet->connect(
+            $dsn,
+            Dynamark3Constants::PROMPT,
+            Dynamark3Constants::PROMPT_ERROR,
+            Dynamark3Constants::LINE_ENDING
+        );
+    }
+
+    /**
      * @param string $name
      * @param array $arguments
      *
-     * @return \Graze\Dynamark3Client\Dynamark3ResponseInterface
+     * @return Graze\Dynamark3Client\Dynamark3Response
      */
     public function __call($name, array $arguments)
     {
         $command = $this->commandResolver->resolve($name);
-        array_unshift($arguments, $command);
-        return call_user_func_array([$this, 'send'], $arguments);
-    }
-
-    /**
-     * @param CommandInterface $command
-     *
-     * @return \Graze\Dynamark3Client\Dynamark3ResponseInterface
-     */
-    protected function send(CommandInterface $command)
-    {
-        $arguments =  func_get_args();
-        $command = array_shift($arguments);
-
-        $argumentsString = '';
-        if (!empty($arguments)) {
-            // add quotes to arguments
-            array_walk($arguments, function (&$value) {
-                $value = sprintf('"%s"', $value);
-            });
-
-            $argumentsString = ' ' . implode(' ', $arguments);
-        }
-
         $telnetResponse = $this->telnet->execute(
-            $command->getCommandText() . $argumentsString,
+            $command->getCommandText() . $command->getArgumentText($arguments),
             $command->getPrompt()
         );
 
@@ -84,21 +73,12 @@ class Dynamark3Client
     }
 
     /**
-     * @param string $dsn
-     *
      * @return Dynamark3Client
      */
-    public static function build($dsn)
+    public static function factory()
     {
-        $telnetClient = TelnetClient::build(
-            $dsn,
-            Dynamark3Constants::PROMPT,
-            Dynamark3Constants::PROMPT_ERROR,
-            Dynamark3Constants::LINE_ENDING
-        );
-
         return new static(
-            $telnetClient,
+            TelnetClient::factory(),
             new CommandResolver()
         );
     }

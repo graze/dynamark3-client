@@ -21,15 +21,23 @@ $ composer require graze/dynamark3-client
 
 ### Instantiating a client
 
-Use the `build` method to return a `Dynamark3ClientInterface` instance with connection a to `$dsn`:
+Use the `factory` method to return a `Dynamark3ClientInterface` instance:
 
 ``` php
-$dsn = '127.0.0.1:20000';
-$client = Graze\Dynamark3Client\Dynamark3Client::build($dsn);
+$client = Graze\Dynamark3Client\Dynamark3Client::factory();
 ...
 ```
 
 ### Issuing commands
+
+Connect to a remote endpoint using `connect`:
+
+```php
+...
+$dsn = '127.0.0.1:20000';
+$client->connect($dsn);
+...
+```
 
 Commands are then simply method names that can be called directly on the client:
 
@@ -57,7 +65,6 @@ Command arguments are passed as method paramaters:
 $path = '\hard disk\domino\filecoding\codes.txt';
 $resp = $client->deletefile($path);
 ...
-
 ```
 
 ### Responses
