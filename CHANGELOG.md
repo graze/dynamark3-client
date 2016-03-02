@@ -7,10 +7,12 @@ All Notable changes to `dynamark3-client` will be documented in this file
 ### Added
 - `connect` method. The client is no longer returned with an active connection upon instantiation
 - `CommandSetxml` Command
+- `getArgumentText` test for Commands
 
 ### Changed
 - The static `Dynamark3Client::build` command is now `Dynamark3Client::factory`
-- Not all commands' arguments require quoting. Move this functionality to the `Command` itself
+- Move responsibility of formatting arguments to the `Command` itself
+- Simplified `Dynamark3ClientTest`
 
 ### Fixed
 - SETXML command will now work
