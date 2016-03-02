@@ -15,17 +15,17 @@
 namespace Graze\Dynamark3Client\Test\Unit\Command;
 
 use \Graze\Dynamark3Client\Test\AbstractCommandTestCase;
-use \Graze\Dynamark3Client\Command\CommandGetxml;
+use \Graze\Dynamark3Client\Command\CommandSetxml;
 use \Graze\Dynamark3Client\Dynamark3Constants;
 
-class CommandGetxmlTest extends AbstractCommandTestCase
+class CommandSetxmlTest extends AbstractCommandTestCase
 {
     /**
      * @return CommandGetxml
      */
     protected function getCommand()
     {
-        return new CommandGetxml();
+        return new CommandSetxml();
     }
 
     /**
@@ -33,7 +33,7 @@ class CommandGetxmlTest extends AbstractCommandTestCase
      */
     protected function getRawTelnetResponse()
     {
-        return 'RESULT GETXML <xml><node>cool xml</node></xml>' . Dynamark3Constants::LINE_ENDING;
+        return Dynamark3Constants::PROMPT . Dynamark3Constants::LINE_ENDING;
     }
 
     /**
@@ -41,7 +41,7 @@ class CommandGetxmlTest extends AbstractCommandTestCase
      */
     protected function getExpectedResponseText()
     {
-        return '<xml><node>cool xml</node></xml>';
+        return Dynamark3Constants::PROMPT;
     }
 
     /**
@@ -49,6 +49,6 @@ class CommandGetxmlTest extends AbstractCommandTestCase
      */
     protected function getExpectedArgumentText()
     {
-        return ' "a" "1"';
+        return ' a 1';
     }
 }
