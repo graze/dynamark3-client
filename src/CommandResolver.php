@@ -21,7 +21,7 @@ class CommandResolver
     /**
      * @param string $name
      *
-     * @return Graze\Dynamark3Client\Command\CommandInterface
+     * @return \Graze\Dynamark3Client\Command\CommandInterface
      */
     public function resolve($name)
     {

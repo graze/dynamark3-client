@@ -59,7 +59,7 @@ class Dynamark3Client
      * @param string $name
      * @param array $arguments
      *
-     * @return Graze\Dynamark3Client\Dynamark3Response;
+     * @return \Graze\Dynamark3Client\Dynamark3ResponseInterface
      */
     public function __call($name, array $arguments)
     {
@@ -71,7 +71,7 @@ class Dynamark3Client
     /**
      * @param CommandInterface $command
      *
-     * @return Graze\Dynamark3Client\Dynamark3Response;
+     * @return \Graze\Dynamark3Client\Dynamark3ResponseInterface
      */
     protected function send(CommandInterface $command)
     {
@@ -79,7 +79,7 @@ class Dynamark3Client
         $command = array_shift($arguments);
 
         $argumentsString = '';
-        if ($arguments) {
+        if (!empty($arguments)) {
             // add quotes to arguments
             array_walk($arguments, function (&$value) {
                 $value = sprintf('"%s"', $value);

@@ -39,7 +39,7 @@ class Dynamark3ResolverTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return []
+     * @return array
      */
     public function dataProviderResolve()
     {
