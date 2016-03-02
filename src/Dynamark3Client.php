@@ -59,7 +59,7 @@ class Dynamark3Client
      * @param string $name
      * @param array $arguments
      *
-     * @return Graze\Dynamark3Client\Dynamark3Response;
+     * @return Graze\Dynamark3Client\Dynamark3Response
      */
     public function __call($name, array $arguments)
     {
