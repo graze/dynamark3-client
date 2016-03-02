@@ -59,37 +59,13 @@ class Dynamark3Client
      * @param string $name
      * @param array $arguments
      *
-     * @return \Graze\Dynamark3Client\Dynamark3ResponseInterface
+     * @return Graze\Dynamark3Client\Dynamark3Response;
      */
     public function __call($name, array $arguments)
     {
         $command = $this->commandResolver->resolve($name);
-        array_unshift($arguments, $command);
-        return call_user_func_array([$this, 'send'], $arguments);
-    }
-
-    /**
-     * @param CommandInterface $command
-     *
-     * @return \Graze\Dynamark3Client\Dynamark3ResponseInterface
-     */
-    protected function send(CommandInterface $command)
-    {
-        $arguments =  func_get_args();
-        $command = array_shift($arguments);
-
-        $argumentsString = '';
-        if (!empty($arguments)) {
-            // add quotes to arguments
-            array_walk($arguments, function (&$value) {
-                $value = sprintf('"%s"', $value);
-            });
-
-            $argumentsString = ' ' . implode(' ', $arguments);
-        }
-
         $telnetResponse = $this->telnet->execute(
-            $command->getCommandText() . $argumentsString,
+            $command->getCommandText() . $command->getArgumentText($arguments),
             $command->getPrompt()
         );
 

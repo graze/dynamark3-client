@@ -43,4 +43,12 @@ class CommandGetxmlTest extends AbstractCommandTestCase
     {
         return '<xml><node>cool xml</node></xml>';
     }
+
+    /**
+     * @return string
+     */
+    protected function getExpectedArgumentText()
+    {
+        return ' "a" "1"';
+    }
 }

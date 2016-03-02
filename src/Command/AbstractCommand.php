@@ -27,6 +27,25 @@ abstract class AbstractCommand implements CommandInterface
     abstract public function getCommandText();
 
     /**
+     * @param array $arguments
+     *
+     * @return string
+     */
+    public function getArgumentText(array $arguments)
+    {
+        if (empty($arguments)) {
+            return '';
+        }
+
+        // add quotes to arguments
+        array_walk($arguments, function (&$value) {
+            $value = sprintf('"%s"', $value);
+        });
+
+        return ' ' . implode(' ', $arguments);
+    }
+
+    /**
      * Default to the TelnetClient's prompt
      *
      * @return string

@@ -65,7 +65,6 @@ Command arguments are passed as method paramaters:
 $path = '\hard disk\domino\filecoding\codes.txt';
 $resp = $client->deletefile($path);
 ...
-
 ```
 
 ### Responses
