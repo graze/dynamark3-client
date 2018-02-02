@@ -6,6 +6,16 @@
         "mockery/mockery": "^0.9.4",
         "phpunit/phpunit": "^4.8"
     },
+    "config": {
+        "platform": {
+            "ext-simplexml": "1.0",
+            "ext-dom": "1.0",
+            "ext-tokenizer": "1.0",
+            "ext-xmlwriter": "1.0",
+            "ext-sockets": "1.0",
+            "php": "5.6"
+        }
+    },
     "autoload": {
         "psr-4": {
             "Graze\\Dynamark3Client\\": "src/"
