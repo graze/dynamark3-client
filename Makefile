@@ -46,6 +46,13 @@ test-functional-coverage-html:
 test-functional-coverage-clover:
 	@docker-compose run --rm php-55 ./vendor/bin/phpunit --testsuite functional --coverage-clover=./tests/report/functional/coverage.clover
 
+# Code sniffer
+lint: ## Run phpcs against the code.
+	@docker-compose run --rm php-55 vendor/bin/phpcs -p --warning-severity=0 src/ tests/
+
+lint-fix: ## Run phpcbf against the code.
+	@docker-compose run --rm php-55 vendor/bin/phpcbf -p src/
+
 .SILENT: help
 help: ## Show this help message
 	set -x
