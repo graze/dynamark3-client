@@ -8,7 +8,7 @@ setup: ## Install dependencies and set up example conf file
 # Testing
 
 test: ## Run all tests
-test: test-coverage test-unit test-unit-coverage test-functional test-functional-coverage
+test: test-unit test-functional
 
 # Coverage tests
 test-coverage: ## Run coverage tests
@@ -24,27 +24,9 @@ test-coverage-clover:
 test-unit: ## Run unit tests
 	@docker-compose run --rm php-55 ./vendor/bin/phpunit --testsuite unit
 
-test-unit-coverage:
-	@docker-compose run --rm php-55 ./vendor/bin/phpunit --testsuite unit --coverage-text
-
-test-unit-coverage-html:
-	@docker-compose run --rm php-55 ./vendor/bin/phpunit --testsuite unit --coverage-html ./tests/report/unit/html
-
-test-unit-coverage-clover:
-	@docker-compose run --rm php-55 ./vendor/bin/phpunit --testsuite unit --coverage-clover=./tests/report/unit/coverage.clover
-
 # Functional tests
 test-functional: ## Run functional tests
 	@docker-compose run --rm php-55 ./vendor/bin/phpunit --testsuite functional
-
-test-functional-coverage:
-	@docker-compose run --rm php-55 ./vendor/bin/phpunit --testsuite functional --coverage-text
-
-test-functional-coverage-html:
-	@docker-compose run --rm php-55 ./vendor/bin/phpunit --testsuite functional --coverage-html ./tests/report/functional/html
-
-test-functional-coverage-clover:
-	@docker-compose run --rm php-55 ./vendor/bin/phpunit --testsuite functional --coverage-clover=./tests/report/functional/coverage.clover
 
 # Code sniffer
 lint: ## Run phpcs against the code.
