@@ -4,7 +4,19 @@
     "require-dev": {
         "symfony/var-dumper": "^3.0",
         "mockery/mockery": "^0.9.4",
-        "phpunit/phpunit": "^4.8"
+        "phpunit/phpunit": "^4.8",
+        "squizlabs/php_codesniffer": "^3.0",
+        "graze/standards": "^2.0"
+    },
+    "config": {
+        "platform": {
+            "ext-simplexml": "1.0",
+            "ext-dom": "1.0",
+            "ext-tokenizer": "1.0",
+            "ext-xmlwriter": "1.0",
+            "ext-sockets": "1.0",
+            "php": "5.6"
+        }
     },
     "autoload": {
         "psr-4": {

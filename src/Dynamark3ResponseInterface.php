@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  *
  * @license https://github.com/graze/dynamark3-client/blob/master/LICENSE.md
- * @link https://github.com/graze/dynamark3-client
+ * @link    https://github.com/graze/dynamark3-client
  */
 
 namespace Graze\Dynamark3Client;
