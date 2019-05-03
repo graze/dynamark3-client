@@ -20,7 +20,7 @@ use \Graze\Dynamark3Client\Command\CommandInterface;
 use \Graze\TelnetClient\TelnetClient;
 use \Graze\Dynamark3Client\Dynamark3Constants;
 
-class Dynamark3Client
+class Dynamark3Client implements Dynamark3ClientInterface
 {
     /**
      * @var TelnetClientInterface
@@ -59,7 +59,7 @@ class Dynamark3Client
      * @param string $name
      * @param array  $arguments
      *
-     * @return Graze\Dynamark3Client\Dynamark3Response
+     * @return Dynamark3ResponseInterface
      */
     public function __call($name, array $arguments)
     {
