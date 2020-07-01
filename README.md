@@ -14,7 +14,7 @@ A Dynamark Communication Protocol 3 client, written in PHP
 Via Composer
 
 ``` bash
-$ composer require graze/dynamark3-client
+composer require graze/dynamark3-client
 ```
 
 ## Usage
@@ -70,6 +70,7 @@ $resp = $client->deletefile($path);
 ### Responses
 
 The client will respond with a `Dynamark3ResponseInterface` object with the following methods:
+
 ```php
 /**
  * Any response from the server up until a prompt is encountered.
@@ -110,15 +111,15 @@ $xml = $resp->getResponseText();
 
 Example success response:
 
-<img width="510" alt="screen shot 2016-02-17 at 16 38 35" src="https://cloud.githubusercontent.com/assets/1314694/13116875/8d932774-d595-11e5-8f48-51198eb9e8ba.png">
+<img width="510" alt="Screenshot of terminal text showing a success response" src="https://cloud.githubusercontent.com/assets/1314694/13116875/8d932774-d595-11e5-8f48-51198eb9e8ba.png">
 
 Example error response:
 
-<img width="512" alt="screen shot 2016-02-17 at 16 39 31" src="https://cloud.githubusercontent.com/assets/1314694/13116912/b3aa9424-d595-11e5-975e-d59728c32205.png">
+<img width="512" alt="Screenshot of terminal text showing an error response" src="https://cloud.githubusercontent.com/assets/1314694/13116912/b3aa9424-d595-11e5-975e-d59728c32205.png">
 
 Some commands will return interesting data in their response, e.g. `getxml`:
 
-<img width="842" alt="screen shot 2016-02-17 at 16 34 26" src="https://cloud.githubusercontent.com/assets/1314694/13116923/c287ab80-d595-11e5-84cd-404de2b0a598.png">
+<img width="842" alt="Screenshot of terminal text showing XML response" src="https://cloud.githubusercontent.com/assets/1314694/13116923/c287ab80-d595-11e5-84cd-404de2b0a598.png">
 
 ## Change log
 
@@ -127,7 +128,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 ## Testing
 
 ``` bash
-$ make test
+make test
 ```
 
 ## Contributing
