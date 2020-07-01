@@ -19,17 +19,6 @@ the following criteria:
 - **Description** - please provide a description of your pull request that details the changes you've made, why you've
 made them including any relevant information or justifications that will aid the person reviewing you changes.
 
-## Development Environment
-
-If you need a vagrant box for development, we recommend using [adlawson/vagrantfiles](https://github.com/adlawson/vagrantfiles), for PHP:
-
-```shell
-$ curl -O https://raw.githubusercontent.com/adlawson/vagrantfiles/master/php/Vagrantfile
-$ vagrant up
-$ vagrant ssh
-$ cd /srv
-```
-
 ## Running Tests
 
 You can run all of the test suites in the project using:
